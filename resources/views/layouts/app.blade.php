@@ -53,16 +53,17 @@
                 <!-- ============================================================== -->
                 @php
                     $segment = Request::segment(1);
+                    $segment1 = Request::segment(2);
                 @endphp
                  <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">{{ Request::is('/')? 'Dashboard': title_case($segment) }}</h4>
+                            <h4 class="page-title">{{ Request::is('/')? 'Dashboard': title_case($segment1) }}</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ title_case($segment) }}</li>
                                     </ol>
                                 </nav>
                             </div>
